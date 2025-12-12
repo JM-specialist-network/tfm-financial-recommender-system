@@ -9,12 +9,12 @@ Trabajo Fin de Máster (ENAE) centrado en el diseño de un sistema de recomendac
 
 ## Objetivo del proyecto
 
-El objetivo del TFM es prototipar un **agente de IA para el agricultor murciano** que:
+El objetivo del TFM es hacer un prototipo funcional de un **agente de IA para el agricultor murciano** que:
 - Responda preguntas sobre precios del agua, ayudas públicas y contratos agrarios.
 - Combine conocimiento de mercado, agronomía, finanzas inclusivas y normativa.
 - Presente la información en un panel sencillo, pensado para un perfil no técnico.
 
-Ejemplo de interfaz (versión de escritorio):
+Ejemplo de interfaz simple (versión de escritorio):
 
 ![Dashboard principal](assets/img/Dashboard_1.png)
 
@@ -22,7 +22,7 @@ Ejemplo de interfaz (versión de escritorio):
 
 ## Metodología (CRISP‑DM)
 
-El trabajo sigue la metodología **CRISP‑DM (Cross‑Industry Standard Process for Data Mining)**, estructurada en seis fases: comprensión del negocio, comprensión de los datos, preparación, modelado, evaluación e implementación. [web:129][web:132]
+Para el proyecto se ha seguido la metodología **CRISP‑DM (Cross‑Industry Standard Process for Data Mining)**, adaptada al proyecto, estructurada en seis fases: comprensión del negocio, comprensión de los datos, preparación, modelado, evaluación e implementación. [web:129][web:132]
 
 En este TFM:
 
@@ -56,12 +56,14 @@ Ejemplo de módulo de simulación de precio del agua:
 
 Durante el desarrollo se exploraron **dos modelos de arquitectura** para la interacción entre agentes y datos.
 
-### 1. Modelo inicial no encapsulado
+### 1. Modelo inicial con capa de RAG no encapsulada
 
-En la versión preliminar, todos los agentes (Investigador de Mercado, Especialista Agronómico, Asesor Financiero Inclusivo, Explicador Inclusivo y Coordinador RAG) consultaban una **única capa RAG centralizada** y un data‑lake común.
+En la versión preliminar, todos los agentes (Investigador de Mercado, Especialista Agronómico, Asesor Financiero Inclusivo, Explicador Inclusivo y Coordinador RAG) consultaban una **única capa RAG centralizada** y un "mini" data‑lake común.
 
 - Ventajas: diseño sencillo, una sola canalización de RAG.
 - Inconvenientes: acoplamiento alto, difícil aislar fuentes específicas por agente y controlar la trazabilidad de la información.
+
+Con esta versión, los resultados que arrojaban a las consultas del panel de usuario eran aceptables.
 
 Esta idea se documenta en el notebook:
 
@@ -73,7 +75,7 @@ Y conceptualmente se refleja en:
 
 ### 2. Modelo final con agentes encapsulados (mini data‑lakes)
 
-En la versión refinada del TFM, cada agente dispone de su **propio mini data‑lake y su propia cadena RAG**:
+En la versión refinada del proyecto, cada agente dispone de su **propio mini data‑lake y su propia cadena RAG**:
 
 - El **Investigador de Mercado** consulta informes de precios, volatilidad y demanda.
 - El **Especialista Agronómico** consulta guías de cultivos, riego y manejo del suelo.
@@ -95,6 +97,8 @@ Esta arquitectura se muestra en:
 
 - `notebooks/01_agent_hierarchy_encapsulated.ipynb`
 - `notebooks/02_rag_pipeline.ipynb`
+  
+Esta arquitecturas es más correcta para el desarrollo con agentes, ya que genera la "diferenciación" más clara con la información que arroja el lmm que se utilizo en las pruebas. De igual manera, la calidad de las respuestas (en este prototipo sencillo no se podía evaluar las respuestas con un indicardor al uso), depende una vez más en gran medida de la calidad de los archivos que están alojado en las "mini" data-lakes.
 
 ---
 
@@ -102,14 +106,18 @@ Esta arquitectura se muestra en:
 
 El prototipo de dashboard permite lanzar preguntas al equipo de agentes y visualizar:
 
-- Documentos clave recuperados por la capa RAG (enlaces clicables).
+- Documentos clave recuperados por la capa RAG (enlaces clickables).
 - Respuesta generada por el agente IA.
 - Gráficos de apoyo (por ejemplo, series de precio del agua).
+- En las pruebas de uso por el autor, se comprobo que con la tecnología disponible existe diferencia perceptible en la calidad de la respuesta, si los datos provienen de un archivo en concreto (o de la situación del data lake) más estructurado.
 
 Ejemplos:
 
 ![Dashboard – consulta sobre agua](assets/img/Dashboard_2.png)
 ![Dashboard – consulta sobre ayudas a la uva](assets/img/Dashboard_3.png)
+
+El prototipo de dashboard se ha desarrollado con Streamlit como interfaz principal del sistema multi‑agente, permitiendo a la persona agricultora interactuar en lenguaje natural con el equipo de IA sin necesidad de conocimientos técnicos. La aplicación organiza la experiencia en tres secciones (Inicio, Configuración y Ayuda) y, para cada consulta, muestra de forma integrada los documentos recuperados por la capa RAG, las respuestas generadas por los agentes y gráficos de apoyo como la evolución simulada del precio del agua o resúmenes de ayudas específicas para cultivos de la Región de Murcia.
+
 
 ---
 ## Estructura del repositorio
@@ -132,11 +140,17 @@ Ejemplos:
 ├── Esquema_2.jpg
 └── Metodo_1.jpg
 ```
+### Una conclusión general
+```
+El trabajo pone de manifiesto que una arquitectura multi‑agente apoyada en RAG podría mejorar la accesibilidad a información más compleja (normativa, ayudas, precios, contratos) para pequeños agricultores, siempre que se diseñe con roles claros y fuentes bien delimitadas. La comparación entre el modelo inicial no encapsulado y la versión final con mini data‑lakes por agente muestra la importancia de separar responsabilidades para ganar explicabilidad, trazabilidad y capacidad de ampliación del sistema. De cara a futuras iteraciones, queda abierto el debate sobre cómo escalar esta aproximación a otros territorios, incorporar datos en tiempo real y evaluar de forma sistemática el impacto del agente en la toma de decisiones económicas de las explotaciones agrícolas.
+
+En un aspecto más de negocio, sería interesante integrar en los agentes información y recomendaciones sobre el lenguaje que arrojan, con el fin de propiciar una mayor comprensión de la información (de esta manera, en cierto modo se ayuda a reducir la "brecha" que podría producir exclusión financiera).
 
 ---
-
-## Alcance y licencia
-
+```
+### Alcance y licencia
+```
+---
 Este repositorio comparte de forma parcial el trabajo del TFM (píldoras de código, diagramas y capturas de pantalla) con fines demostrativos y educativos. No incluye la memoria completa ni todos los datasets originales.
 
 Si se desea una versión más completa y funcional de la Dashboard, enviame un email o contacten conmigo via las redes que aparecen en mi perfil.
