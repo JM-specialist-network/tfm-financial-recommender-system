@@ -16,7 +16,7 @@ El objetivo del TFM es prototipar un **agente de IA para el agricultor murciano*
 
 Ejemplo de interfaz (versión de escritorio):
 
-![Dashboard principal](assets/img/Dashboard_1.jpg)
+![Dashboard principal](assets/img/Dashboard_1.png)
 
 ---
 
