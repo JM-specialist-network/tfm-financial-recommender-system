@@ -113,8 +113,7 @@ Ejemplos:
 
 ---
 ## Estructura del repositorio
-
-.
+```
 ├── README.md # Este archivo
 ├── notebooks/ # Píldoras de código (Jupyter, sin ejecutar)
 │ ├── 01_agent_hierarchy.ipynb
@@ -132,8 +131,7 @@ Ejemplos:
 ├── Esquema_1.jpg
 ├── Esquema_2.jpg
 └── Metodo_1.jpg
-.
-
+```
 
 ---
 
