@@ -3,7 +3,7 @@
 Trabajo Fin de Máster (ENAE) centrado en el diseño de un sistema de recomendación financiera y agronómica para pequeños agricultores de la Región de Murcia, utilizando una arquitectura multi‑agente apoyada en una capa de Retrieval‑Augmented Generation (RAG).
 
 ![Logotipo ENAE](assets/img/Logo_ENAE.png)
-![Logotipo programa](assets/img/Murcia_logo.png)
+![Logotipo programa](assets/img/murcia_logo.png)
 
 ---
 
