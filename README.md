@@ -141,14 +141,14 @@ El prototipo de dashboard se ha desarrollado con Streamlit como interfaz princip
 └── Metodo_1.jpg
 ```
 ### Una conclusión general
-```
+
 El trabajo pone de manifiesto que una arquitectura multi‑agente apoyada en RAG podría mejorar la accesibilidad a información más compleja (normativa, ayudas, precios, contratos) para pequeños agricultores, siempre que se diseñe con roles claros y fuentes bien delimitadas. La comparación entre el modelo inicial no encapsulado y la versión final con mini data‑lakes por agente muestra la importancia de separar responsabilidades para ganar explicabilidad, trazabilidad y capacidad de ampliación del sistema. De cara a futuras iteraciones, queda abierto el debate sobre cómo escalar esta aproximación a otros territorios, incorporar datos en tiempo real y evaluar de forma sistemática el impacto del agente en la toma de decisiones económicas de las explotaciones agrícolas.
 
 En un aspecto más de negocio, sería interesante integrar en los agentes información y recomendaciones sobre el lenguaje que arrojan, con el fin de propiciar una mayor comprensión de la información (de esta manera, en cierto modo se ayuda a reducir la "brecha" que podría producir exclusión financiera).
 
-```
+
 ### Alcance y licencia
-```
+
 
 Este repositorio comparte de forma parcial el trabajo del TFM (píldoras de código, diagramas y capturas de pantalla) con fines demostrativos y educativos. No incluye la memoria completa ni todos los datasets originales.
 
