@@ -146,11 +146,10 @@ El trabajo pone de manifiesto que una arquitectura multi‑agente apoyada en RAG
 
 En un aspecto más de negocio, sería interesante integrar en los agentes información y recomendaciones sobre el lenguaje que arrojan, con el fin de propiciar una mayor comprensión de la información (de esta manera, en cierto modo se ayuda a reducir la "brecha" que podría producir exclusión financiera).
 
----
 ```
 ### Alcance y licencia
 ```
----
+
 Este repositorio comparte de forma parcial el trabajo del TFM (píldoras de código, diagramas y capturas de pantalla) con fines demostrativos y educativos. No incluye la memoria completa ni todos los datasets originales.
 
 Si se desea una versión más completa y funcional de la Dashboard, enviame un email o contacten conmigo via las redes que aparecen en mi perfil.
