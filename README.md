@@ -2,8 +2,8 @@
 
 Trabajo Fin de Máster (ENAE) centrado en el diseño de un sistema de recomendación financiera y agronómica para pequeños agricultores de la Región de Murcia, utilizando una arquitectura multi‑agente apoyada en una capa de Retrieval‑Augmented Generation (RAG).
 
-![Logotipo ENAE](assets/img/Logo_ENAE.jpg)
-![Logotipo programa](assets/img/Murcia_logo.jpg)
+![Logotipo ENAE](assets/img/Logo_ENAE.png)
+![Logotipo programa](assets/img/Murcia_logo.png)
 
 ---
 
@@ -30,7 +30,7 @@ En este TFM:
 - El **equipo multi‑agente** se sitúa sobre esa capa para especializar las respuestas según rol.
 - El **dashboard** es el punto de contacto con la persona agricultora.
 
-![Metodología CRISP‑DM](assets/img/Metodo_1.jpg)
+![Metodología CRISP‑DM](assets/img/Metodo_1.png)
 
 ---
 
@@ -43,12 +43,12 @@ A nivel alto, el sistema se organiza en cuatro bloques:
 3. **Equipo multi‑agente**: agentes especializados (mercado, agronomía, finanzas, explicación, coordinación RAG).  
 4. **Visualización**: panel Streamlit con gráficos, enlaces a documentos y respuestas generadas.
 
-![Esquema general RAG + multi‑agente](assets/img/Esquema_1.jpg)
-![Proceso multi‑agente](assets/img/Esquema_2.jpg)
+![Esquema general RAG + multi‑agente](assets/img/Esquema_1.webp)
+![Proceso multi‑agente](assets/img/Esquema_2.webp)
 
 Ejemplo de módulo de simulación de precio del agua:
 
-![Evolución precio del agua](assets/img/Dashboard_4.jpg)
+![Evolución precio del agua](assets/img/Dashboard_4.png)
 
 ---
 
@@ -69,7 +69,7 @@ Esta idea se documenta en el notebook:
 
 Y conceptualmente se refleja en:
 
-![AI Multi‑Agent Data Processing](assets/img/Dashboard_5.jpg)
+![AI Multi‑Agent Data Processing](assets/img/Dashboard_5.png)
 
 ### 2. Modelo final con agentes encapsulados (mini data‑lakes)
 
@@ -108,8 +108,8 @@ El prototipo de dashboard permite lanzar preguntas al equipo de agentes y visual
 
 Ejemplos:
 
-![Dashboard – consulta sobre agua](assets/img/Dashboard_2.jpg)
-![Dashboard – consulta sobre ayudas a la uva](assets/img/Dashboard_3.jpg)
+![Dashboard – consulta sobre agua](assets/img/Dashboard_2.png)
+![Dashboard – consulta sobre ayudas a la uva](assets/img/Dashboard_3.png)
 
 ---
 ## Estructura del repositorio
